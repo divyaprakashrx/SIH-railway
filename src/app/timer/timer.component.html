@@ -1,0 +1,17 @@
+<body style="display: flex;justify-content: center;align-items: center;">
+    <mat-card style="height: 600px;max-height:70vh;width: 600px;max-width:90vw;">
+        <mat-card-title style="width: 100%;display: flex;justify-content: center;">Access Granted </mat-card-title>
+        <mat-card-content>
+            <div style="display: flex;justify-content: center;">
+        <img src="assets/clock 1.svg" style="min-height: 100px;height: 20vh;max-height: 300px;margin-top: 3vh;margin-bottom: 3vh;" alt="clock"/>
+        </div>
+        <div style="display: flex;justify-content: center;">
+        <h1>{{message}}</h1>
+        </div>
+        <div class="row d-flex justify-content-center" style="padding-top:5vh;padding-bottom:5vh">
+            <button mat-raised-button color="primary" type="submit" routerLink="/login">{{info}}</button>
+        </div>
+       
+        </mat-card-content>
+    </mat-card>
+</body>

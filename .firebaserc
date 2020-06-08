@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gsmtest-6139a": {
+      "hosting": {
+        "sihrailway": [
+          "gsmtest-6139a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gsmtest-6139a"
+  }
+}

@@ -1,0 +1,52 @@
+<body style="display: flex;justify-content: center;align-items: center;height: 90vh;">
+<div class="login-container">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="row d-flex justify-content-center">
+            <h1>Login to get access</h1>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <mat-card style="width: 90%;">
+                <mat-card-title>Enter Your ID</mat-card-title>
+                <mat-form-field style="width: 90%;">
+                    <mat-label>Enter ID</mat-label>
+                    <textarea matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" ngModel
+                        name="id"></textarea>
+                </mat-form-field>
+            </mat-card>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <mat-card style="width: 90%;">
+                <mat-card-title>Enter Your Password</mat-card-title>
+                <mat-form-field style="width: 90%;">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" name="password" ngModel>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </mat-card>
+        </div>
+        <div class="row  d-flex justify-content-center">
+            <mat-card style="width: 90%;">
+                <mat-card-title>Select Your train</mat-card-title>
+                <mat-form-field style="width:50%">
+                    <mat-select ngModel name="branch" value="">
+                        <mat-option value="abc">ABC EXPRESS</mat-option>
+                        <mat-option value="def">DEF EXPRESS</mat-option>
+                        <mat-option value="ghi">GHI EXPRESS</mat-option>
+                        <mat-option value="jkl">JKL EXPRESS</mat-option>
+                        <mat-option value="mno">MNO EXPRESS</mat-option>
+                        <mat-option value="pqr">PQR EXPRESS</mat-option>
+                        <mat-option value="stu">STU EXPRESS</mat-option>
+                        <mat-option value="vwx">VWX EXPRESS</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-card>
+        </div>
+        <div class="row d-flex justify-content-center" style="padding-top:5vh;padding-bottom:5vh">
+            <button mat-raised-button color="primary" type="submit"> Get Access</button>
+        </div>
+    </form>
+</div>
+</body>

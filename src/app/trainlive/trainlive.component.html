@@ -1,0 +1,34 @@
+<div style="width: 100%;display:flex;justify-content: center;margin-top:2vh;margin-bottom: 2vh;">
+  <h1>Currently running trains</h1>
+</div>
+<div style="width: 100%;display:flex;justify-content: center;">
+<mat-card style="width:70%;">
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <ng-container matColumnDef="train">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Train</th>
+      <td mat-cell *matCellDef="let row">{{row.train}}</td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Train No.</th>
+      <td mat-cell *matCellDef="let row">{{row.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let row">{{row.status}}</td>
+    </ng-container>
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Location</th>
+      <td mat-cell *matCellDef="let row"><button style="background-color:aqua;border: 0px;padding: 6px;border-radius: 2px;" (click)="run()">Check location</button></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>z
+  <mat-paginator #paginator
+      [length]="dataSource?.data.length"
+      [pageIndex]="0"
+      [pageSize]="50"
+      [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>
+</mat-card></div>
